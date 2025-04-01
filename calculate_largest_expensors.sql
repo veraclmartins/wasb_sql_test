@@ -1,5 +1,6 @@
 USE memory.default;
 
+-- get a list of employees that exceed the amount 1000
 SELECT  
     em.employee_id
     , concat(em.first_name, ' ', em.last_name) AS employee_name

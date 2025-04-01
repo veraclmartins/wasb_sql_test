@@ -1,5 +1,6 @@
 USE memory.default;
 
+-- Creating EXPENSES table
 CREATE TABLE EXPENSES (
     employee_id TINYINT,
     unit_price DECIMAL(8, 2),
@@ -7,6 +8,7 @@ CREATE TABLE EXPENSES (
 )
 COMMENT 'Expenses table using data from finance/receipts_from_last_night folder mapped with Employee identifier';
 
+-- Clean expenses temporary table if exists
 DROP TABLE IF EXISTS TempExpenses;
 
 CREATE TABLE TempExpenses (
@@ -15,6 +17,8 @@ CREATE TABLE TempExpenses (
     quantity TINYINT
 )
 COMMENT 'Expenses temporary table using data from finance/receipts_from_last_night folder';
+
+-- Inserting expenses data into temporary table from finance/receipts_from_last_night folder
 
 INSERT INTO TempExpenses VALUES
     ('Alex Jacobson', 6.50, 14),
@@ -26,6 +30,7 @@ INSERT INTO TempExpenses VALUES
     ('Umberto Torrielli', 17.50, 4)
 ;
 
+-- Inserting into EXPENSES table data from EMPLOYEE and temporary expenses tables
 
 INSERT INTO EXPENSES 
 SELECT 

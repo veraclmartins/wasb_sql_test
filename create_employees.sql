@@ -1,5 +1,7 @@
 USE memory.default;
 
+-- Creating EMPLOYEE table
+
 CREATE TABLE EMPLOYEE (
  employee_id TINYINT, 
  first_name VARCHAR, 
@@ -8,6 +10,8 @@ CREATE TABLE EMPLOYEE (
  manager_id TINYINT
 )
 COMMENT 'Employee table using data from hr/employee_index.csv file';
+
+-- Inserting data from hr/employee_index.csv file into EMPLOYEE table
 
 INSERT INTO EMPLOYEE VALUES
 (1,'Ian','James','CEO',4),
